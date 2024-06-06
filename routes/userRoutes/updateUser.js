@@ -20,10 +20,16 @@ module.exports = (req, res) => {
     const result = await data.updateUser(id, updatedParams);
 
     if (result) {
-      res.writeHead(200);
+      if (result === 'invalid id') {
+        res.writeHead(404);
+        res.end(JSON.stringify({ message: 'Invalid id' }));
+      } else {
+        res.writeHead(200);
+        res.end(JSON.stringify(result));
+      }
     } else {
-      res.writeHead(400);
+      res.writeHead(500);
+      res.end(JSON.stringify({ message: 'Internal error' }));
     }
-    res.end(JSON.stringify(result));
   });
 }

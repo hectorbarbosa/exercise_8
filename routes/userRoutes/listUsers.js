@@ -1,7 +1,12 @@
 const data = require('../../postgres-data');
 
 module.exports = async (req, res) => {
-  res.writeHead(200);
   const users = await data.getUsers();
-  res.end(JSON.stringify(users));
+  if (users === null) {
+    res.writeHead(500);
+    res.end(JSON.stringify({ message: 'Internal error' }));
+  } else {
+    res.writeHead(200);
+    res.end(JSON.stringify(users));
+  }
 }

@@ -107,7 +107,7 @@ async function getUserById(id) {
     }
   } catch (error) {
     // console.log(error);
-    return 'error getting user';
+    return false;
   }
 }
 
@@ -132,7 +132,7 @@ async function updateUser(id, user) {
     }
   } catch (error) {
     // console.log(error);
-    return 'error updating user';
+    return null;
   }
 }
 
