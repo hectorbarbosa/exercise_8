@@ -1,0 +1,15 @@
+{
+  "name": "postgres-sample",
+  "version": "1.0.0",
+  "description": "sample postgres db",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Eugene",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.11.5"
+  }
+}
