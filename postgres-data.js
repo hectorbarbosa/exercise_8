@@ -2,7 +2,7 @@ const { Client } = require('pg');
 const DB_NAME = 'mydb';
 const DB_USER = 'postgres';
 const DB_HOST = 'localhost';
-const DB_PASSWORD = '111';
+const DB_PASSWORD = 'secret_password';
 
 const client = new Client({
   host: DB_HOST,
